@@ -10,7 +10,7 @@ public class SuperPunch : MonoBehaviour
     {
         if(collision.rigidbody != null && collision.gameObject.layer == 7)
         {
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.one * force * 100, ForceMode.Force);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce((collision.transform.position - transform.position) * force * 10, ForceMode.Impulse);
         }
     }
 
